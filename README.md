@@ -1,18 +1,19 @@
-# TrueNas Gotify Adapter
+# TrueNas Pushover Adapter
 
-TrueNas does not natively provide a way to send alerts and notifications to a Gotify server. This repo 'abuses' the TrueNas Slack alert integration and provides a fake slack webhook endpoint to forward alerts to a Gotify server.
+Adaptation of ZTube's [TrueNas Gotify Adapter](https://github.com/ZTube/truenas-gotify-adapter). TrueNas does not natively provide a way to send alerts and notifications to Pushover. This repo uses the TrueNas Slack alert integration and provides a fake slack webhook endpoint to forward alerts to a Pushover server.
+
 Note that Slack is not required at all for this integration to work.
 
 ## Installation
 1. Apps -> Discover Apps -> Custom App
-    - Enter an Application Name, e.g. "truenas-gotify"
-    - _Image Repository_: ghcr.io/ztube/truenas-gotify-adapter
+    - Enter an Application Name, e.g. "truenas-pushover"
+    - _Image Repository_: ghcr.io/ztube/truenas-pushover-adapter
     - _Image Tag_: main
     - Environment Variables:
-        - _Name_: GOTIFY\_URL
-        - _Value_: [your gotify url] e.g.https://gotify.example.com/
-        - _Name_: GOTIFY\_TOKEN
-        - _Value_: [your gotify app token] e.g. cGVla2Fib29v
+        - _Name_: APPLICATION\_TOKEN
+        - _Value_: [your pushover application token] e.g. F32ijd932hD2
+        - _Name_: USER\_KEY
+        - _Value_: [your pushover user key] e.g. cGVla2Fib29v
 
     - Network Configuration: 
         - Check _"Host Network"_
@@ -23,13 +24,13 @@ OR
 1. Apps -> Discover Apps -> Custom App -> Install via YAML
 ```yaml
 services:
-  gotify-truenas-adapter:
-    container_name: gotify-truenas-adapter
-    image: ghcr.io/ztube/truenas-gotify-adapter:main
+  pushover-truenas-adapter:
+    container_name: pushover-truenas-adapter
+    image: ghcr.io/savagerose/truenas-pushover-adapter:main
     restart: unless-stopped
     environment:
-      - GOTIFY_URL=<your gotify url> # e.g. https://gotify.example.com/
-      - GOTIFY_TOKEN=<your gotify app token> # e.g. cGVla2Fib29v
+      - APPLICATION_TOKEN=<your pushover application token> # e.g. F32ijd932hD2
+      - USER_KEY=<your pushover user or group key> # e.g. cGVla2Fib29v
     network_mode: host
 ```
 
