@@ -6,7 +6,7 @@ Note that Slack is not required at all for this integration to work.
 
 ## Installation
 1. Apps -> Discover Apps -> Custom App
-    - Enter an Application Name, e.g. "truenas-pushover"
+    - Enter an Application Name, e.g. "truenas-pushover-adapter"
     - _Image Repository_: ghcr.io/ztube/truenas-pushover-adapter
     - _Image Tag_: main
     - Environment Variables:
@@ -24,8 +24,8 @@ OR
 1. Apps -> Discover Apps -> Custom App -> Install via YAML
 ```yaml
 services:
-  pushover-truenas-adapter:
-    container_name: pushover-truenas-adapter
+  truenas-pushover-adapter:
+    container_name: truenas-pushover-adapter
     image: ghcr.io/savagerose/truenas-pushover-adapter:main
     restart: unless-stopped
     environment:

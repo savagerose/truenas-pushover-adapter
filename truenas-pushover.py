@@ -6,7 +6,7 @@ from aiohttp import ClientSession
 
 # The url the alerts should be forwarded to.
 # Format: http[s]://{host}:{port}/
-PUSHOVER_BASEURL = https://api.pushover.net/1/messages.json
+PUSHOVER_BASEURL = "https://api.pushover.net/1/messages.json"
 # The token for the Pushover application
 # Example: cGVla2Fib29v
 APPLICATION_TOKEN = os.environ.get("APPLICATION_TOKEN")
