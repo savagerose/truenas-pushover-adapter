@@ -21,6 +21,11 @@ PORT = 31662
 
 routes = web.RouteTableDef()
 
+# Endpoint for verifying that the service is running
+@routes.get("/status")
+async def get_status(request):
+    return web.Response(status=200)
+
 # Listen to post requests on / and /message
 @routes.post("/")
 @routes.post("/message")
