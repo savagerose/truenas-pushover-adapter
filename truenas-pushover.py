@@ -68,7 +68,7 @@ async def send_pushover_message(message, token, user_key, title=None, priority=N
         params["priority"] = priority
 
     async with ClientSession() as session:
-        async with session.post(PUSHOVER_BASEURL, headers=headers, params=params) as resp:
+        async with session.post(PUSHOVER_BASEURL, params=params) as resp:
             return resp
 
 if __name__ == "__main__":
