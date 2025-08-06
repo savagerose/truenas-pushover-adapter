@@ -1,6 +1,6 @@
-# TrueNas Pushover Adapter
+# TrueNAS Pushover Adapter
 
-Adaptation of ZTube's [TrueNas Gotify Adapter](https://github.com/ZTube/truenas-gotify-adapter). TrueNas does not natively provide a way to send alerts and notifications to Pushover. This repo uses the TrueNas Slack alert integration and provides a fake slack webhook endpoint to forward alerts to a Pushover server.
+Adaptation of ZTube's [TrueNAS Gotify Adapter](https://github.com/ZTube/truenas-gotify-adapter). TrueNAS does not natively provide a way to send alerts and notifications to Pushover. This repo uses the TrueNAS Slack alert integration and provides a fake slack webhook endpoint to forward alerts to a Pushover server.
 
 Note that Slack is not required at all for this integration to work.
 
